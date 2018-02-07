@@ -10,7 +10,6 @@ import * as constants from './constants.js';
 import {Extractor} from './extract.js';
 
 const PROGRAM_NAME = 'easygettext';
-const ALLOWED_EXTENSIONS = ['html', 'htm', 'jade', 'pug', 'vue'];
 
 // Process arguments
 const argv = minimist(process.argv.slice(2));
@@ -57,10 +56,6 @@ const extractor = new Extractor({
 files.forEach(function (filename) {
   let file = filename;
   const ext = file.split('.').pop();
-  if (ALLOWED_EXTENSIONS.indexOf(ext) === -1) {
-    console.log(`[${PROGRAM_NAME}] will not extract: '${filename}' (invalid extension)`);
-    return;
-  }
   console.log(`[${PROGRAM_NAME}] extracting: '${filename}`);
   try {
     let data = fs.readFileSync(file, {encoding: 'utf-8'}).toString();

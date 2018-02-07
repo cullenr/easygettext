@@ -1,14 +1,11 @@
 {
-  "name": "easygettext",
+  "name": "easygettext-imag-fork",
   "version": "2.2.0",
   "description": "Simple tools to extract gettext strings",
   "main": "dist/index",
   "repository": {
     "type": "git",
-    "url": "https://github.com/polyconseil/easygettext"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org"
+    "url": "https://github.com/cullenr/easygettext"
   },
   "scripts": {
     "prepublish": "babel --presets es2015 --plugins transform-object-assign --source-maps true src --out-dir dist/",
